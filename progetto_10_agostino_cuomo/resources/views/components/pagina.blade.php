@@ -24,17 +24,28 @@
                 <a class="nav-link active" href="{{route('lista')}}">Lista</a>
               </li>
               <li class="nav-item">
+                @auth
                 <a class="nav-link active" href="{{route('formInserimento')}}">Form</a>
+                
+                @else 
+              
+                <a class="nav-link disable" href="">Devi registrarti prima</a>
+                @endauth
               </li>
              
             </ul>
           </div>
   @auth
-  <p>Ciao</p> {{Auth::user->email}}
-  <button type="button" class="btn btn-warning float-end" onclick="event.PreventDefault(); ">Logout</button>
+  <p>Ciao {{Auth::user()->email}}</p> 
+
+  <form action="{{route('logout')}}" method="POST">
+    @csrf
+  <button class="btn btn-warning float-end">Logout</button>
+</form>
+
   @else
-  <button type="button" class="btn btn-warning float-end">Login</button>
-          <button type="button" class="btn btn-warning-emphasis float-end">Registrati</button>
+  <a type="button" class="btn btn-warning float-end" href="{{route('login')}}">Login</a>
+          <a type="button" class="btn btn-warning-emphasis float-end" href="{{route('register')}}">Registrati</a>
   @endauth
 
 

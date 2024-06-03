@@ -1,3 +1,5 @@
+<x-pagina>
+  <span class="badge text-bg-warning">Login</span></h1>
 <form method="POST" action="{{route('login')}}">
     @csrf
     <div class="mb-3">
@@ -15,3 +17,4 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
+</x-pagina>
