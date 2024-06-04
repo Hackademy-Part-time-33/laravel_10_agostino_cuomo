@@ -11,7 +11,7 @@ class RequestPrincipale extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,15 +24,15 @@ class RequestPrincipale extends FormRequest
         return [
         
                 'email' => 'required',
-                'descrizione' => 'required',
+                'recensione' => 'required',
                
         ];
     }
 
      public function messages(): array {
         return [
-            'email'.'required'=>'email obbligatoria',
-            'recensione'.'required'=>'descrizione obbligatoria',
+            'email.required'=>'email obbligatoria',
+            'recensione.required'=>'descrizione obbligatoria',
         ];
     }  
 }

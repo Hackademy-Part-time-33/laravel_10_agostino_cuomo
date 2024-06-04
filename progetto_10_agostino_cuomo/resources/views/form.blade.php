@@ -5,20 +5,25 @@
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Email address</label>
           <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" {{old('value')}}>
+          @error('email')
+          {{$message}}
+     @enderror 
         </div>
 
         <div class="mb-3">
-        {{--   @error() --}}
+      
           <label for="recensione" class="form-label">Recensione</label>
           <input type="text" class="form-control"  name="recensione" id="recensione" {{old('value')}}>
-        {{--   @enderror --}} 
+          @error('recensione')
+          {{$message}}
+     @enderror 
         </div>
 
         <div class="mb-3 form-check">
-          {{-- @error() --}}
+          
           <input type="checkbox" class="form-check-input" id="exampleCheck1" {{old('value')}}>
           <label class="form-check-label" for="exampleCheck1">Check me out</label>
-         {{--  @enderror --}}  
+       
         </div>
 
         <div class="mb-3 form-check">

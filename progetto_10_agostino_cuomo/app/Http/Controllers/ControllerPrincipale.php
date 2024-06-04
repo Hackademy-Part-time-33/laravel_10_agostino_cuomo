@@ -28,15 +28,16 @@ class ControllerPrincipale extends Controller
         return view('home');
     }
 
-    public function invio ( Request $request ){
+    public function invio ( RequestPrincipale $request ){
 
-         $request->validate([
-        
-            'email' => 'required',
-            'recensione' => 'required',
-            'image' => 'required'
-           
-         ]); 
+         /*    $request->validate([
+            
+                'email' => 'required',
+                'recensione' => 'required',
+                'image' => 'required'
+            
+            ]);  */
+          
 
        
         
